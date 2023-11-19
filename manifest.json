@@ -1,5 +1,5 @@
 {
-    "name": "Jump to the recipes",
+    "name": "Recipe Finder",
     "description": "Skip recipe articles and jump to the good stuff",
     "version": "1.0.2",
     "manifest_version": 3,
@@ -8,5 +8,8 @@
     "author": "Tim Harrold",
     "background": {
         "service_worker": "service-worker.js"
+    },
+    "icons": {
+        "128": "images/icon.png"
     }
 }

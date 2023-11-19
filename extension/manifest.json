@@ -1,0 +1,12 @@
+{
+    "name": "Jump to the recipes",
+    "description": "Skip recipe articles and jump to the good stuff",
+    "version": "1.0.2",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "action": {},
+    "author": "Tim Harrold",
+    "background": {
+        "service_worker": "service-worker.js"
+    }
+}

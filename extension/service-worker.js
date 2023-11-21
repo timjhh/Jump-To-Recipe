@@ -28,12 +28,13 @@ function execute() {
       for (const a of document.querySelectorAll("a")) {
         if (a.textContent.trim().toLowerCase().includes("jump to recipe")) {
           let id = a.getAttribute('href')
-          let destination = elementFromId(id)
-          if(destination) {
-            scrollTo(destination)
-            return true
+          if(id) {
+            let destination = elementFromId(id)
+            if(destination) {
+              scrollTo(destination)
+              return true
+            }
           }
-
         }
       }
       return false
@@ -43,9 +44,18 @@ function execute() {
     // Returns status of operation.
     function jumpFromHeading() {
       const headers = "h1, h2, h3, h4, h5, h6"
-      for (const a of document.querySelectorAll(headers)) {
-        if (a.textContent.trim().toLowerCase() == "ingredients") {
-          scrollTo(a)
+      let query = document.querySelectorAll(headers)
+      let dirMatch = Array.from(query).filter(e => e.textContent.trim().toLowerCase() == "ingredients")
+      if(dirMatch.length == 1) {
+        scrollTo(dirMatch[0])
+        return true
+      }
+      // If 'ingredients' contains 
+      let elms = Array.from(query).filter(e => e.textContent.trim().toLowerCase().includes("ingredients"))
+      if(elms.length > 0) {
+        let elm = elms[elms.length-1]
+        if(elm.textContent.trim().toLowerCase().includes("ingredients")) {
+          scrollTo(elm)
           return true
         }
       }
@@ -55,7 +65,7 @@ function execute() {
 }
 
 
-jumpToRecipe()
+console.log(jumpToRecipe())
 }
 
 

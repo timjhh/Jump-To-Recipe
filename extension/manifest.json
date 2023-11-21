@@ -1,6 +1,6 @@
 {
-    "name": "Recipe Finder",
-    "description": "Skip recipe articles and jump to the good stuff",
+    "name": "Find My Recipe",
+    "description": "Skip recipe excess and jump to the good stuff",
     "version": "1.0.2",
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting"],
@@ -10,6 +10,6 @@
         "service_worker": "service-worker.js"
     },
     "icons": {
-        "128": "images/icon.png"
+        "128": "images/icon128.png"
     }
 }
